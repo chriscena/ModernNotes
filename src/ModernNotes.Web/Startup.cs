@@ -34,10 +34,10 @@ namespace ModernNotes.Web
 		public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-	        services.AddSwaggerGen(options =>
+			services.AddSwaggerGen(options =>
 	        {
 				options.SwaggerDoc("v1", new Info {Title="Modern Notes API", Version = "v1"});
-
+				
 		        var basePath = PlatformServices.Default.Application.ApplicationBasePath;
 		        var xmlPath = Path.Combine(basePath, "ModernNotes.Web.xml");
 				options.IncludeXmlComments(xmlPath);

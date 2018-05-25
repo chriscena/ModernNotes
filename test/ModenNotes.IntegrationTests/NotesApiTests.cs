@@ -43,6 +43,18 @@ namespace ModenNotes.IntegrationTests
 		}
 
 		[TestMethod]
+		public async Task PostEmptyNoteReturnsBadRequest()
+		{
+			InMemoryNotesRepository.Notes.Clear();
+			var newNote = new NewNote { Text = "" };
+			var bodyContent = new StringContent(JsonConvert.SerializeObject(newNote), Encoding.Default, "application/json");
+
+			var response = await _client.PostAsync("/api/notes", bodyContent);
+
+			Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
+		}
+
+		[TestMethod]
 		public async Task GetNotesWith0NotesReturns0Notes()
 		{
 			InMemoryNotesRepository.Notes.Clear();

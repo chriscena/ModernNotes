@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
 using ModernNotes.Web.Contracts;
 
 namespace ModernNotes.Web.Controllers
@@ -51,8 +46,10 @@ namespace ModernNotes.Web.Controllers
 		/// <returns>The saved Note</returns>
 		[HttpPost]
 		[ProducesResponseType(typeof(Note), 200)]
+		[ProducesResponseType(400)]
 		public IActionResult Post([FromBody]NewNote newNote)
 		{
+			if (string.IsNullOrWhiteSpace(newNote.Text)) return BadRequest();
 			return Ok(_repository.AddNewNote(newNote));
 		}
 
