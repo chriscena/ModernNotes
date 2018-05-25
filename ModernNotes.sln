@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernNotes.Web", "src\ModernNotes.Web\ModernNotes.Web.csproj", "{20D6D8F8-8FAE-4355-AA53-3036EDBEA062}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModenNotes.IntegrationTests", "test\ModenNotes.IntegrationTests\ModenNotes.IntegrationTests.csproj", "{1BAA576D-E405-4B54-B3B6-F014C9D55689}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernNotes.WpfClient", "src\ModernNotes.WpfClient\ModernNotes.WpfClient.csproj", "{12F9AF6D-999F-4825-A58D-9B7E70C939C4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernNotes.Specs", "test\ModernNotes.Specs\ModernNotes.Specs.csproj", "{7B880C51-86DF-4AE1-BA39-119416D4566E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernNotes.IntegrationTests", "test\ModernNotes.IntegrationTests\ModernNotes.IntegrationTests.csproj", "{ADBCEE7E-0C77-4FF8-A92F-38FF0E147DCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{20D6D8F8-8FAE-4355-AA53-3036EDBEA062}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20D6D8F8-8FAE-4355-AA53-3036EDBEA062}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20D6D8F8-8FAE-4355-AA53-3036EDBEA062}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1BAA576D-E405-4B54-B3B6-F014C9D55689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BAA576D-E405-4B54-B3B6-F014C9D55689}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BAA576D-E405-4B54-B3B6-F014C9D55689}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BAA576D-E405-4B54-B3B6-F014C9D55689}.Release|Any CPU.Build.0 = Release|Any CPU
 		{12F9AF6D-999F-4825-A58D-9B7E70C939C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12F9AF6D-999F-4825-A58D-9B7E70C939C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12F9AF6D-999F-4825-A58D-9B7E70C939C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{7B880C51-86DF-4AE1-BA39-119416D4566E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B880C51-86DF-4AE1-BA39-119416D4566E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B880C51-86DF-4AE1-BA39-119416D4566E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADBCEE7E-0C77-4FF8-A92F-38FF0E147DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADBCEE7E-0C77-4FF8-A92F-38FF0E147DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADBCEE7E-0C77-4FF8-A92F-38FF0E147DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADBCEE7E-0C77-4FF8-A92F-38FF0E147DCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

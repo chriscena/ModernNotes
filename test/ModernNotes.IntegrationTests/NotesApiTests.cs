@@ -11,7 +11,7 @@ using ModernNotes.Web;
 using ModernNotes.Web.Contracts;
 using Newtonsoft.Json;
 
-namespace ModenNotes.IntegrationTests
+namespace ModernNotes.IntegrationTests
 {
 	[TestClass]
 	public class NotesApiTests
@@ -22,7 +22,7 @@ namespace ModenNotes.IntegrationTests
 		public NotesApiTests()
 		{
 			_server = new TestServer(new WebHostBuilder()
-				.UseStartup<Startup>());
+				.UseStartup<TestStartup>());
 			_client = _server.CreateClient();
 		}
 

@@ -32,13 +32,6 @@ namespace ModernNotes.Web.Controllers
 			return _repository.GetNotes();
 		}
 
-		// GET: api/Notes/5
-		[HttpGet("{id}", Name = "Get")]
-		public string Get(int id)
-		{
-			return "value";
-		}
-
 		/// <summary>
 		/// Saves a new note.
 		/// </summary>

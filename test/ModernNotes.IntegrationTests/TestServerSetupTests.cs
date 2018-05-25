@@ -2,10 +2,12 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ModernNotes.Web;
 
-namespace ModenNotes.IntegrationTests
+namespace ModernNotes.IntegrationTests
 {
     [TestClass]
     public class TestServerSetupTests
@@ -16,7 +18,7 @@ namespace ModenNotes.IntegrationTests
 	    public TestServerSetupTests()
 	    {
 		    _server = new TestServer(new WebHostBuilder()
-			    .UseStartup<Startup>());
+			    .UseStartup<TestStartup>());
 		    _client = _server.CreateClient();
 	    }
 
@@ -29,5 +31,17 @@ namespace ModenNotes.IntegrationTests
 		    
 			Assert.AreEqual("OK", responseString);
 	    }
+	}
+
+	internal class TestStartup : Startup
+	{
+		public TestStartup(IConfiguration configuration) : base(configuration)
+		{
+		}
+
+		protected override void ConfigureDatabase(IServiceCollection services)
+		{
+			services.AddTransient<INotesRepository, InMemoryNotesRepository>();
+		}
 	}
 }

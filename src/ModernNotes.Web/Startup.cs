@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
+using ModernNotes.Web.Infrastructure;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace ModernNotes.Web
@@ -42,10 +43,18 @@ namespace ModernNotes.Web
 		        var xmlPath = Path.Combine(basePath, "ModernNotes.Web.xml");
 				options.IncludeXmlComments(xmlPath);
 	        });
-	        services.AddTransient<INotesRepository, InMemoryNotesRepository>();
+	        ConfigureDatabase(services);
         }
-
 		/// <summary>
+		/// Make database configuration overridable
+		/// </summary>
+		/// <param name="services"></param>
+	    protected virtual void ConfigureDatabase(IServiceCollection services)
+		{
+			services.AddTransient<INotesRepository, SqliteNotesRepository>();
+		}
+
+	    /// <summary>
 		/// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 		/// </summary>
 		/// <param name="app"></param>

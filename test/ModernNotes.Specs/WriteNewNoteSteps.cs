@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Views;
+﻿using System.Threading.Tasks;
+using GalaSoft.MvvmLight.Views;
 using ModernNotes.Specs.Helpers;
 using ModernNotes.WpfClient.Main;
 using Moq;
@@ -15,9 +16,14 @@ namespace ModernNotes.Specs
 		public void GivenIStartedTheClientApp()
 		{
 			var notesService = ScenarioContext.Current.GetOrDefault<FakeNotesService>("notesService");
+			var dialogServiceMock = new Mock<IDialogService>();
+			dialogServiceMock
+				.Setup(ds => ds.ShowMessage(It.IsAny<string>(), It.IsAny<string>(), 
+					It.IsAny<string>(), It.IsAny<string>(), null))
+				.Returns(Task.FromResult(true));
 			var viewModel = new MainViewModel(
 				notesService ?? new FakeNotesService(),
-				new Mock<IDialogService>().Object);
+				dialogServiceMock.Object);
 			viewModel.LoadedCommand.Execute(null);
 			ScenarioContext.Current["viewmodel"] = viewModel;
 		}

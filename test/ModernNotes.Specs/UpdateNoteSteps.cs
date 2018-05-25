@@ -13,7 +13,7 @@ namespace ModernNotes.Specs
         public void WhenISelectANoteWithTheText(string noteText)
         {
 			var viewmodel = ScenarioContext.Current.GetOrDefault<MainViewModel>("viewmodel");
-	        viewmodel.SelectedNote = viewmodel.Notes.FirstOrDefault(n => n.Text == noteText);
+	        viewmodel.SelectedNote = viewmodel.Notes.Single(n => n.Text == noteText);
         }
         
         [When(@"I press the Edit button")]

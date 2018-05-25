@@ -5,6 +5,10 @@
 	/// </summary>
 	public class Note
 	{
+		private Note()
+		{
+
+		}
 		/// <summary>
 		/// 
 		/// </summary>
@@ -19,10 +23,10 @@
 		/// <summary>
 		/// The Id of the Note
 		/// </summary>
-		public int Id { get; private set; }
+		public int Id { get; set; }
 		/// <summary>
 		/// The text of the Note
 		/// </summary>
-		public string Text { get; private set; }
+		public string Text { get; set; }
 	}
 }

@@ -31,9 +31,9 @@ namespace ModernNotes.WpfClient.Main
 			LoadedCommand = new RelayCommand(GetNotes);
 			RefreshCommand = new RelayCommand(GetNotes);
 			NewCommand = new RelayCommand(StartNewNote);
-			SaveCommand = new RelayCommand(SaveNote);
 			EditCommand = new RelayCommand(EditNote);
 			DeleteCommand = new RelayCommand(DeleteNote);
+			SaveCommand = new RelayCommand(SaveNote);
 			CancelEditCommand = new RelayCommand(CancelEdit);
 
 		}
